@@ -1,4 +1,4 @@
-import isArray from "./isArray";
+import isArray from './isArray';
 /**
  *
  * @param {Array} array 待处理的数组
@@ -6,10 +6,11 @@ import isArray from "./isArray";
  * @param {String} value 组成对象的值
  * @returns (Object): 返回生成的新对象
  */
-function array2obj(array, key = "key", value = "value") {
+function array2obj(array, key = 'key', value = 'value') {
   const object = {};
-  if (!isArray(array)) {
-    return console.error("传入的不是数组");
+  if (!Array.isArray(array)) {
+    // return console.error('传入的不是数组');
+    throw new Error('传入的不是数组');
   }
   for (let index = 0; index < array.length; index += 1) {
     const item = array[index];
